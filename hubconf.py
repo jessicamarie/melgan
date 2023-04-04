@@ -26,7 +26,7 @@ def melgan(model_name='nvidia_tacotron2_LJ11_epoch6400', pretrained=True, progre
 
 
 if __name__ == '__main__':
-    vocoder = torch.hub.load('seungwonpark/melgan', 'melgan')
+    vocoder = torch.hub.load('jessicamarie/melgan', 'melgan')
     mel = torch.randn(1, 80, 234) # use your own mel-spectrogram here
 
     print('Input mel-spectrogram shape: {}'.format(mel.shape))
