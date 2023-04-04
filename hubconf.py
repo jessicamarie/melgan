@@ -15,7 +15,8 @@ def melgan(model_name='nvidia_tacotron2_LJ11_epoch6400', pretrained=True, progre
     model = Generator(params['mel_channel'])
 
     if pretrained:
-        state_dict = torch.hub.load_state_dict_from_url(params['model_url'],
+        state_dict = torch.hub.load_state_dict_from_url(params['model_url'], 
+                                                        map_location=torch.device('cpu'),
                                                         progress=progress)
         model.load_state_dict(state_dict['model_g'])
 
